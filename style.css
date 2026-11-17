@@ -1,0 +1,464 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #d9c096;
+  --parchment: #efe0bd;
+  --surface: #f4e8c9;
+  --border: #8a6d3b;
+  --border-dark: #5a3a1c;
+  --accent: #a31621;
+  --accent-hover: #7f1119;
+  --brown: #4a2f1b;
+  --text: #3b2412;
+  --text-dim: #6f5636;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 300px 180px at 15% 20%, rgba(138, 109, 59, 0.22), transparent 70%),
+    radial-gradient(ellipse 420px 240px at 85% 65%, rgba(138, 109, 59, 0.18), transparent 70%),
+    radial-gradient(ellipse 220px 140px at 60% 10%, rgba(90, 58, 28, 0.14), transparent 70%),
+    radial-gradient(1.5px 1.5px at 40px 60px, rgba(90, 58, 28, 0.25) 1px, transparent 0),
+    radial-gradient(1.5px 1.5px at 180px 140px, rgba(90, 58, 28, 0.2) 1px, transparent 0);
+  background-size: auto, auto, auto, 240px 240px, 240px 240px;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+
+/* 上部の赤い告知バー */
+.announce-bar {
+  background-color: var(--accent);
+  color: #f7ead0;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+header {
+  background-color: var(--brown);
+  border-bottom: 3px double var(--border);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Kaisei Decol", serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #f4e8c9;
+}
+
+.page-title {
+  font-family: "Kaisei Decol", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+  color: var(--brown);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(74, 47, 27, 0.25);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(74, 47, 27, 0.35);
+  transform: translateY(-2px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: var(--parchment);
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  font-size: 15px;
+  margin: 12px 0 4px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+button {
+  background-color: var(--accent);
+  color: #f7ead0;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+main a {
+  color: var(--brown);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main a:hover {
+  color: var(--accent);
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 8px 0;
+}
+
+.checkout-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.checkout-item-info {
+  flex: 1;
+}
+
+.checkout-item-name {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.checkout-item-price {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.remove-btn {
+  background-color: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  font-weight: 400;
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  background-color: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.cart-badge {
+  font-weight: 700;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: #f7ead0;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: opacity 0.15s ease;
+}
+
+.cart-link:hover {
+  opacity: 0.85;
+}
+
+.hero-logo {
+  padding: 0;
+}
+
+.hero-logo img {
+  width: 100%;
+  display: block;
+  height: auto;
+  border-bottom: 3px double var(--border-dark);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--surface);
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 13px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.back-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.product-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.product-image {
+  flex: 0 0 380px;
+  max-width: 380px;
+}
+
+.product-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px;
+  display: block;
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0;
+}
+
+.product-info h1 {
+  font-family: "Kaisei Decol", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--brown);
+}
+
+.product-info .price {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.product-info .description {
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.product-info button {
+  width: 100%;
+  max-width: 260px;
+}
+
+.legal-notice {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.legal-notice h3 {
+  margin: 0 0 8px;
+  font-family: "Kaisei Decol", serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--brown);
+}
+
+.legal-notice dl {
+  margin: 0;
+}
+
+.legal-notice dt {
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.legal-notice dd {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.site-footer {
+  border-top: 3px double var(--border-dark);
+  padding: 24px 20px;
+  text-align: center;
+  background-color: var(--brown);
+}
+
+.site-footer a {
+  color: #d9c096;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.site-footer a:hover {
+  color: #f4e8c9;
+}
+
+.policy {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.policy h3 {
+  margin: 20px 0 6px;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.policy p {
+  margin: 6px 0;
+  color: var(--text-dim);
+}
+
+.policy ul {
+  margin: 6px 0;
+  padding-left: 20px;
+  color: var(--text-dim);
+}
+
+.policy-date {
+  margin-top: 24px;
+  text-align: right;
+}
+
+/* ==========================
+   スマホ向けの調整
+   画面幅が600px以下のときだけ、ここが適用される
+   ★必ずファイルの一番最後に置くこと★
+========================== */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    flex-wrap: wrap;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  .cart-link {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  .cart-badge {
+    font-size: 15px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card h2 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .product-layout {
+    flex-direction: column;
+    gap: 2;
+  }
+
+  .product-image {
+    flex: none;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .product-image img {
+    margin-bottom: 0;
+  }
+
+  .product-info button {
+    max-width: none;
+  }
+}

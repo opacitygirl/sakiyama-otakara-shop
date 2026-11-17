@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "チェルシー",
+    "price": 10000,
+    "image": "images/chelsea.jpg",
+    "description": "おたからのキャンディです。なかなか手に入らない代物です。"
+  },
+  {
+    "id": 2,
+    "name": "M＆M'S ピーナッツ",
+    "price": 5000,
+    "image": "images/mms-peanuts.jpg",
+    "description": "黄色のパッケージがかわいらしい、当店のおすすめ商品です。"
+  },
+  {
+    "id": 3,
+    "name": "ゴジラのぬいぐるみ",
+    "price": 20000,
+    "image": "images/godzilla.jpg",
+    "description": "ゴジラのぬいぐるみ。大きくて本物そっくりの、レアな一点です。"
+  }
+]
