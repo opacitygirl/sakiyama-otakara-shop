@@ -1,5 +1,5 @@
-// 決済サーバーのURL。公開時は新しいRenderサービスのURLに書き換える（今はローカル用）
-const SERVER_URL = "http://localhost:4242";
+// 決済サーバーのURL（Render公開済み：崎山先生のおたからSHOP用）
+const SERVER_URL = "https://sakiyama-otakara-shop.onrender.com";
 
 const savedCart = localStorage.getItem("cart");
 let cart = savedCart ? JSON.parse(savedCart) : [];
